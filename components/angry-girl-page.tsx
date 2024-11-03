@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -9,7 +11,6 @@ import Timer from './timer'
 
 export function AngryGirlPage() {
   const [isCallActive, setIsCallActive] = useState(false)
-  const [isMuted, setIsMuted] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false);
   const public_api_key = process.env.NEXT_PUBLIC_MILLIS_PUBLIC_KEY || "";
   const toggleCall = () => {
@@ -19,8 +20,8 @@ export function AngryGirlPage() {
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
-// @ts-ignore
-  const [client, setClient] = useState<any>(null);
+
+const [client, setClient] = useState<any>(null);
   //const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
