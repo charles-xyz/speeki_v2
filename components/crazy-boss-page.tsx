@@ -23,7 +23,6 @@ export function CrazyBossPage() {
         setIsExpanded(!isExpanded);
     };
 
-// @ts-ignore
     const [client, setClient] = useState<any>(null);
 
     useEffect(() => {
