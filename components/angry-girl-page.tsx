@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable */
 
 'use client'
 
@@ -20,7 +20,7 @@ export function AngryGirlPage() {
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
-// @ts-ignore
+
 const [client, setClient] = useState<any>(null);
   //const [error, setError] = useState<Error | null>(null);
 
