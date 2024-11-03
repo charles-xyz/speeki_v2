@@ -38,7 +38,7 @@ export function SpeekiLandingPage() {
             Welcome to <span className="text-cyan-400">SPEEKI</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Dude it's literally just AI that sounds like a human
+            AI that sounds human
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/get-started" className="w-sm sm:w-auto">

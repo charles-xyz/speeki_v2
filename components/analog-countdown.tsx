@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 
 export function AnalogCountdown() {
   const [timeLeft, setTimeLeft] = useState(45)

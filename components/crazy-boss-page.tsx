@@ -2,15 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
-import { Phone, PhoneOff, Mic, MicOff, Video, VideoOff } from "lucide-react"
+import { Phone, PhoneOff } from "lucide-react"
 import Link from "next/link"
 import Millis from '@millisai/web-sdk'
 import Timer from './timer'
 
 export function CrazyBossPage() {
     const [isCallActive, setIsCallActive] = useState(false)
-    const [isMuted, setIsMuted] = useState(false)
-    const [isVideoOn, setIsVideoOn] = useState(true)
     const [isExpanded, setIsExpanded] = useState(false);
     const public_api_key = process.env.NEXT_PUBLIC_MILLIS_PUBLIC_KEY || "";
 
@@ -23,12 +21,8 @@ export function CrazyBossPage() {
         setIsExpanded(!isExpanded);
     };
 
-    const toggleMute = () => {
-        setIsMuted(!isMuted)
-    }
-
+// @ts-ignore
     const [client, setClient] = useState<any>(null);
-    const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
         try {

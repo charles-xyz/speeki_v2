@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
-import { Phone, PhoneOff, Mic, MicOff, Video, VideoOff } from "lucide-react"
+import { Phone, PhoneOff } from "lucide-react"
 import Link from "next/link"
 import Millis from '@millisai/web-sdk'
 import Timer from './timer'
-import { AnalogCountdown } from './analog-countdown'
 
 export function AngryGirlPage() {
   const [isCallActive, setIsCallActive] = useState(false)
@@ -20,13 +19,9 @@ export function AngryGirlPage() {
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
-
-  const toggleMute = () => {
-    setIsMuted(!isMuted)
-  }
-
+// @ts-ignore
   const [client, setClient] = useState<any>(null);
-  const [error, setError] = useState<Error | null>(null);
+  //const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     try {

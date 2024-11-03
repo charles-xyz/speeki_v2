@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react';
 import Millis from '@millisai/web-sdk';
 
 export default function MillisClient() {
+  // @ts-ignore
   const [client, setClient] = useState<any>(null);
+  // @ts-ignore
   const [error, setError] = useState<Error | null>(null);
   const public_api_key = process.env.NEXT_PUBLIC_MILLIS_PUBLIC_KEY || "";
 
@@ -42,15 +44,6 @@ export default function MillisClient() {
     }
   };
 
-  const endConversation = () => {
-    if (client) {
-      try {
-        client.stop()
-      } catch(err) {
-        console.error(err)
-      }
-    }
-  }
   if (error) {
     return <div>Error: {error.message}</div>;
   }
