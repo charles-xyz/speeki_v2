@@ -10,7 +10,7 @@ const Timer = () => {
 
     return () => clearInterval(interval);
   }, []);
-
+// @ts-ignore
   const formatTime = (totalSeconds: any) => {
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
