@@ -57,6 +57,16 @@ const [client, setClient] = useState<any>(null);
     }
   };
 
+  const endConversation = () => {
+    if (client) {
+        try {
+        client.stop()
+        } catch(err) {
+        console.error(err)
+        }
+    }
+    }
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
       {/* Full-screen geometric pattern overlay */}
@@ -99,17 +109,17 @@ const [client, setClient] = useState<any>(null);
           </div>
 
           <div className="flex justify-center space-x-4">
-            <Button
-              size="lg"
-              className={` rounded-full p-4 ${isCallActive ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'}`}
-              onClick={() => {
-                toggleCall();
-                handleToggle();
-                startConversation();
-              }}>
-              {isCallActive ? <PhoneOff className="h-6 w-6" /> : <Phone className="h-6 w-6" />}
-            </Button>
-          </div>
+                <Button
+                size="lg"
+                className={` rounded-full p-4 ${isCallActive ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'}`}
+                onClick={() => {
+                    toggleCall();
+                    handleToggle();
+                    {isCallActive ? endConversation() : startConversation()}
+                }}>
+                {isCallActive ? <PhoneOff className="h-6 w-6" /> : <Phone className="h-6 w-6" />}
+                </Button>
+            </div>
         </div>
       </main>
 
